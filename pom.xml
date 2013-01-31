@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>realest</groupId>
@@ -12,15 +13,13 @@
         <url>https://github.com/zafarella/realest</url>
         <connection>scm:git:git@github.com:zafarella/realest.git</connection>
         <developerConnection>scm:git:git:ssh://git@github.com:zafarella/realest.git</developerConnection>
-      <tag>realest-1.0</tag>
-  </scm>
+    </scm>
 
 
     <properties>
         <spring.version>3.2.1.RELEASE</spring.version>
         <junit.version>4.11</junit.version>
-        <jdk.version>1.6</jdk.version>
-	    <github.global.server>github</github.global.server>
+        <github.global.server>github</github.global.server>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -51,30 +50,31 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>2.3</version>
+                <version>2.4</version>
             </plugin>
             <plugin>
-            <artifactId>maven-compiler-plugin</artifactId>
+                <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
             </plugin>
         </plugins>
     </build>
 
     <repositories>
+
         <repository>
             <id>springsource-repo</id>
             <name>SpringSource Repository</name>
             <url>http://repo.springsource.org/release</url>
         </repository>
 
-            <repository>
-                <id>realest-mvn-repo</id>
-                <url>https://github.com/zafarella/realest/mvn-repo/</url>
-                <snapshots>
-                    <enabled>true</enabled>
-                    <updatePolicy>always</updatePolicy>
-                </snapshots>
-            </repository>
+        <repository>
+            <id>realest-mvn-repo</id>
+            <url>https://github.com/zafarella/realest/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
     </repositories>
 
     <dependencies>
