@@ -10,8 +10,8 @@
 
 
     <scm>
-        <url>https://github.com/zafarella/realest</url>
         <connection>scm:git:git@github.com:zafarella/realest.git</connection>
+        <url>https://github.com/zafarella/realest.git</url>
         <developerConnection>scm:git:git:ssh://git@github.com:zafarella/realest.git</developerConnection>
     </scm>
 
