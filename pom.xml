@@ -10,9 +10,9 @@
 
 
     <scm>
-        <connection>scm:git:git@github.com:zafarella/realest.git</connection>
+        <connection>scm:git:https://github.com/zafarella/realest.git</connection>
         <url>https://github.com/zafarella/realest.git</url>
-        <developerConnection>scm:git:git:ssh://git@github.com:zafarella/realest.git</developerConnection>
+        <developerConnection>scm:git:git:https://github.com/zafarella/realest.git</developerConnection>
     </scm>
 
 
@@ -32,7 +32,6 @@
         </repository>
     </distributionManagement>
 
-
     <build>
         <finalName>realest</finalName>
         <plugins>
@@ -51,7 +50,20 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>perform</goal>
+                        </goals>
+                        <configuration>
+                            <pomFileName>${project.name}/pom.xml</pomFileName>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
+
+
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
@@ -65,15 +77,6 @@
             <id>springsource-repo</id>
             <name>SpringSource Repository</name>
             <url>http://repo.springsource.org/release</url>
-        </repository>
-
-        <repository>
-            <id>realest-mvn-repo</id>
-            <url>https://github.com/zafarella/realest/mvn-repo/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
         </repository>
     </repositories>
 
@@ -104,6 +107,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 
 </project>
