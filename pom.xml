@@ -12,7 +12,7 @@
     <scm>
         <connection>scm:git:https://github.com/zafarella/realest.git</connection>
         <url>https://github.com/zafarella/realest.git</url>
-        <developerConnection>scm:git:git:https://github.com/zafarella/realest.git</developerConnection>
+        <developerConnection>scm:git:https://github.com/zafarella/realest.git</developerConnection>
     </scm>
 
 
