@@ -5,14 +5,14 @@
     <groupId>realest</groupId>
     <artifactId>realest</artifactId>
     <packaging>war</packaging>
-    <version>1.1</version>
+    <version>1.2-SNAPSHOT</version>
 
 
     <scm>
         <connection>scm:git:https://github.com/zafarella/realest.git</connection>
         <url>https://github.com/zafarella/realest.git</url>
         <developerConnection>scm:git:https://github.com/zafarella/realest.git</developerConnection>
-    <tag>realest-1.1</tag>
+    <tag>HEAD</tag>
   </scm>
 
 
