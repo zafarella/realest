@@ -108,4 +108,6 @@
         </dependency>
     </dependencies>
 
+    <name>Real estate lister</name>
+    <description>The app lists the real estate on the map providing interactive selection to a user</description>
 </project>
