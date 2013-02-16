@@ -1,2 +1,2 @@
-Web app for listing real estate on the map
+real estate listing web app
 =======
