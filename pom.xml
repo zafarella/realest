@@ -1,29 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>realest</groupId>
     <artifactId>realest</artifactId>
     <packaging>war</packaging>
     <version>1.6-SNAPSHOT</version>
-
-
-    <scm>
-        <connection>scm:git:https://github.com/zafarella/realest.git</connection>
-        <url>https://github.com/zafarella/realest.git</url>
-        <developerConnection>scm:git:https://github.com/zafarella/realest.git</developerConnection>
-      <tag>realest-1.4</tag>
-  </scm>
-
-
+    <name>Real estate lister</name>
+    <description>The app lists the real estate on the map providing interactive selection to a user</description>
+    <!-- ================================================================================= -->
     <properties>
         <spring.version>3.2.1.RELEASE</spring.version>
         <junit.version>4.11</junit.version>
         <github.global.server>github</github.global.server>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <!-- ================================================================================= -->
+    <profiles>
 
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <debug>true</debug>
+                            <optimize>false</optimize>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
 
+        <profile>
+            <id>test</id>
+        </profile>
+
+        <profile>
+            <id>prod</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.tomcat.maven</groupId>
+                        <artifactId>tomcat6-maven-plugin</artifactId>
+                        <version>2.0</version>
+                        <configuration>
+                            <url>http://some.prod.server:8080/manager</url>
+                            <server>TomcatProd</server>
+                            <path>/</path>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <configuration>
+                            <debug>false</debug>
+                            <optimize>true</optimize>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+    <!-- ================================================================================= -->
+    <scm>
+        <connection>scm:git:https://github.com/zafarella/realest.git</connection>
+        <url>https://github.com/zafarella/realest.git</url>
+        <developerConnection>scm:git:https://github.com/zafarella/realest.git</developerConnection>
+        <tag>realest-1.4</tag>
+    </scm>
+    <!-- ================================================================================= -->
     <distributionManagement>
         <repository>
             <id>internal.repo</id>
@@ -31,7 +84,7 @@
             <url>file://${project.build.directory}/mvn-repo</url>
         </repository>
     </distributionManagement>
-
+    <!-- ================================================================================= -->
     <build>
         <finalName>realest</finalName>
         <plugins>
@@ -61,6 +114,16 @@
                         </configuration>
                     </execution>
                 </executions>
+
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <warName>realest</warName>
+                </configuration>
             </plugin>
 
 
@@ -68,18 +131,10 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
             </plugin>
+
         </plugins>
     </build>
-
-    <repositories>
-
-        <repository>
-            <id>springsource-repo</id>
-            <name>SpringSource Repository</name>
-            <url>http://repo.springsource.org/release</url>
-        </repository>
-    </repositories>
-
+    <!-- ================================================================================= -->
     <dependencies>
 
         <dependency>
@@ -107,7 +162,13 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <name>Real estate lister</name>
-    <description>The app lists the real estate on the map providing interactive selection to a user</description>
+    <!-- ================================================================================= -->
+    <repositories>
+        <repository>
+            <id>springsource-repo</id>
+            <name>SpringSource Repository</name>
+            <url>http://repo.springsource.org/release</url>
+        </repository>
+    </repositories>
+    <!-- ================================================================================= -->
 </project>
