@@ -5,7 +5,7 @@
     <groupId>realest</groupId>
     <artifactId>realest</artifactId>
     <packaging>war</packaging>
-    <version>1.6</version>
+    <version>1.7-SNAPSHOT</version>
     <name>Real estate lister</name>
     <description>The app lists the real estate on the map providing interactive selection to a user</description>
     <developers>
@@ -80,7 +80,7 @@
         <connection>scm:git:https://github.com/zafarella/realest.git</connection>
         <url>https://github.com/zafarella/realest.git</url>
         <developerConnection>scm:git:https://github.com/zafarella/realest.git</developerConnection>
-        <tag>realest-1.6</tag>
+        <tag>realest-1.7</tag>
     </scm>
     <!-- ================================================================================= -->
     <distributionManagement>
