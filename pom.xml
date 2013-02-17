@@ -25,56 +25,56 @@
         <maven>3.0.4</maven>
     </prerequisites>
     <!-- ================================================================================= -->
-    <profiles>
+    <!--<profiles>-->
 
-        <profile>
-            <id>dev</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <configuration>
-                            <debug>true</debug>
-                            <optimize>false</optimize>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
+        <!--<profile>-->
+            <!--<id>dev</id>-->
+            <!--<build>-->
+                <!--<plugins>-->
+                    <!--<plugin>-->
+                        <!--<groupId>org.apache.maven.plugins</groupId>-->
+                        <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                        <!--<configuration>-->
+                            <!--<debug>true</debug>-->
+                            <!--<optimize>false</optimize>-->
+                        <!--</configuration>-->
+                    <!--</plugin>-->
+                <!--</plugins>-->
+            <!--</build>-->
 
-        </profile>
+        <!--</profile>-->
 
-        <profile>
-            <id>test</id>
-        </profile>
+        <!--<profile>-->
+            <!--<id>test</id>-->
+        <!--</profile>-->
 
-        <profile>
-            <id>prod</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.tomcat.maven</groupId>
-                        <artifactId>tomcat6-maven-plugin</artifactId>
-                        <version>2.0</version>
-                        <configuration>
-                            <url>http://some.prod.server:8080/manager</url>
-                            <server>TomcatProd</server>
-                            <path>/</path>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <configuration>
-                            <debug>false</debug>
-                            <optimize>true</optimize>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
+        <!--<profile>-->
+            <!--<id>prod</id>-->
+            <!--<build>-->
+                <!--<plugins>-->
+                    <!--<plugin>-->
+                        <!--<groupId>org.apache.tomcat.maven</groupId>-->
+                        <!--<artifactId>tomcat6-maven-plugin</artifactId>-->
+                        <!--<version>2.0</version>-->
+                        <!--<configuration>-->
+                            <!--<url>http://some.prod.server:8080/manager</url>-->
+                            <!--<server>TomcatProd</server>-->
+                            <!--<path>/</path>-->
+                        <!--</configuration>-->
+                    <!--</plugin>-->
+                    <!--<plugin>-->
+                        <!--<groupId>org.apache.maven.plugins</groupId>-->
+                        <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                        <!--<configuration>-->
+                            <!--<debug>false</debug>-->
+                            <!--<optimize>true</optimize>-->
+                        <!--</configuration>-->
+                    <!--</plugin>-->
+                <!--</plugins>-->
+            <!--</build>-->
+        <!--</profile>-->
 
-    </profiles>
+    <!--</profiles>-->
     <!-- ================================================================================= -->
     <scm>
         <connection>scm:git:https://github.com/zafarella/realest.git</connection>
