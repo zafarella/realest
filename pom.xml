@@ -8,6 +8,12 @@
     <version>1.6-SNAPSHOT</version>
     <name>Real estate lister</name>
     <description>The app lists the real estate on the map providing interactive selection to a user</description>
+    <developers>
+        <developer>
+            <name>zafarella</name>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
     <!-- ================================================================================= -->
     <properties>
         <spring.version>3.2.1.RELEASE</spring.version>
@@ -15,14 +21,14 @@
         <github.global.server>github</github.global.server>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <prerequisites>
+        <maven>3.0.4</maven>
+    </prerequisites>
     <!-- ================================================================================= -->
     <profiles>
 
         <profile>
             <id>dev</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <build>
                 <plugins>
                     <plugin>
